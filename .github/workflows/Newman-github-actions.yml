@@ -2,8 +2,7 @@ name: Newman Test Run
 on:
   push:
     branches:
-    - master
-    - staging
+    - main
 jobs:
   newman:
     runs-on: ubuntu-latest
