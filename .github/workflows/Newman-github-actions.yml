@@ -12,7 +12,5 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '12'
-          collectionID: 8692884-f6a06efb-05d4-4ee1-969d-65cf737fdafb
-          environmentID: 98798-a974f882-8ecg0-4c80-9901-a583778393987a
       - run: npm install -g newman
       - run: newman run "https://api.postman.com/collections/8692884-f6a06efb-05d4-4ee1-969d-65cf737fdafb?access_key=PMAT-01H2DNGKE675AR9XK4YAGQGYD6"
