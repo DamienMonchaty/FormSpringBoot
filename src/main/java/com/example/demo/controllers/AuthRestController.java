@@ -38,6 +38,9 @@ public class AuthRestController {
 	
 	@Autowired
 	AuthenticationManager authenticationManager;
+	
+	
+	
 
 	@Autowired
 	UserRepository userRepository;
