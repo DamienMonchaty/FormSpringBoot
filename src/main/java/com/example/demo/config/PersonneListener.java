@@ -25,5 +25,10 @@ public class PersonneListener {
 	public void getPersonneListener3(Personne p) {
 		log.info("Personne Listener 3 : " + p);
 	}
+	
+	@JmsListener(destination = "${pers.jms.topic}", containerFactory = "personneJmsContFactory")
+	public void getPersonneListener4(Personne p) {
+		log.info("Personne Listener 3 : " + p);
+	}
 
 }

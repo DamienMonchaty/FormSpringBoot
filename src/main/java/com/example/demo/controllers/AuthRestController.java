@@ -12,7 +12,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dto.JwtResponse;
 import com.example.demo.dto.SigninDto;
 import com.example.demo.dto.SignupDto;
 import com.example.demo.models.Role;
@@ -28,8 +28,6 @@ import com.example.demo.models.User;
 import com.example.demo.repository.RoleRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.security.jwt.JwtProvider;
-
-import springfox.documentation.service.ResponseMessage;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -71,8 +69,8 @@ public class AuthRestController {
 
 		// UserDetails user = (UserDetails) authentication.getPrincipal();
 
-		return ResponseEntity.ok(jwt);
-        // return ResponseEntity.ok(new JwtResponse(jwt, user.getUsername(), user.getAuthorities()));
+		// return ResponseEntity.ok(jwt);
+        return ResponseEntity.ok(new JwtResponse(jwt));
 	}
 
 	// – /api/auth/signup
