@@ -43,8 +43,6 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(value = "/personnes")
 public class PersonneRestController {
 
-	
-	
 	/** The jms template. */
 	@Autowired
 	JmsTemplate jmsTemplate;
